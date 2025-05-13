@@ -1,10 +1,21 @@
-# Proyecto Interno01
+# Proyecto Interno01_OlistData
 
-Integrantes:
-    - Javier Sanchez de las Heras (javierstemdo)
-    - Mariam Guadalupe Nuñez (mariamgn-stemdo)
-    - Sergio Fernández Nevado (srgfdz)
+Aplicación desarrollada como parte del Bootcamp de STEMDO.
 
-url del proyecto en streamlit --> https://stemdo-bootamp-proyecto01.streamlit.app
+## 👥 Integrantes
 
-Lanzar la app en local modo desarrollo --> streamlit run main.py
+- **Javier Sanchez de las Heras** - [javierstemdo](https://github.com/javierstemdo)  
+- **Mariam Guadalupe Nuñez** - [mariamgn-stemdo](https://github.com/mariamgn-stemdo)  
+- **Sergio Fernández Nevado** - [srgfdz](https://github.com/srgfdz)
+
+## 🌐 URL del Proyecto
+
+Accede a la aplicación desplegada en Streamlit:  
+🔗 [https://stemdo-bootamp-proyecto01.streamlit.app](https://stemdo-bootamp-proyecto01.streamlit.app)
+
+## 🛠️ Ejecutar en Local (Modo Desarrollo)
+
+Para lanzar la aplicación en tu entorno local, ejecuta el siguiente comando:
+
+```bash
+streamlit run main.py
