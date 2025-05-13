@@ -1,0 +1,23 @@
+Subir algo desde nuestra rama (algunos comandos no son necesarios pero es mejor hacerlos por si acaso hay algo que no tengamos actualizado):
+	git fetch                     # Trae referencias remotas (por si hay cambios nuevos)
+	git pull                      # Trae y actualiza tu rama local con el remoto
+	git add .                     # Añade todos los cambios al área de staging
+	git commit -m "Mensaje opcional de los cambios"
+	git push                      # Sube tus cambios a tu rama en el remoto
+ 
+ 
+	git checkout main             # Ir a la rama main
+	git fetch                     # Actualiza referencias remotas
+	git pull origin main          # Asegúrate de tener la versión más reciente de main
+	git merge nombre_nuestra_rama  # Une tu rama actual con main
+	git push origin main          # Sube los cambios fusionados a GitHub
+	git checkout nombre_nuestra_rama   # Volver a tu rama de trabajo para continuar el desarrollo en ella
+ 
+ 
+ 
+Descargar en local algún cambio que haya subido algún compañero a main:
+	git checkout main             # Ir a main
+	git fetch                     # Traer referencias actualizadas
+	git pull origin main          # Traer los cambios recientes de main
+	git checkout nombre_nuestra_rama   # Volver a tu rama de trabajo para continuar el desarrollo en ella
+	git merge main                      # Traer los cambios de main a tu rama
