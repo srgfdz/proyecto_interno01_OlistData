@@ -9,7 +9,7 @@ Subir algo desde nuestra rama (algunos comandos no son necesarios pero es mejor 
 	git checkout main             # Ir a la rama main
 	git fetch                     # Actualiza referencias remotas
 	git pull origin main          # Asegúrate de tener la versión más reciente de main
-	git merge nombre_nuestra_rama  # Une tu rama actual con main
+	git merge nombre_nuestra_rama --no-edit  # Une tu rama actual con main
 	git push origin main          # Sube los cambios fusionados a GitHub
 	git checkout nombre_nuestra_rama   # Volver a tu rama de trabajo para continuar el desarrollo en ella
  
