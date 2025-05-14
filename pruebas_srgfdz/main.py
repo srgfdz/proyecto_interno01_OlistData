@@ -21,8 +21,8 @@ st.markdown("""
 st.header("1. Número de Clientes por Estado")
 
 # Cargar datos para el punto 1 (clientes y pedidos)
-df_customers = pd.read_csv('./../datasets/olist_customers_dataset.csv')
-df_orders = pd.read_csv('./../datasets/olist_orders_dataset.csv')
+df_customers = pd.read_csv('./../datasets_limpios/olist_order_customer.csv')
+df_orders = pd.read_csv('./../datasets_limpios/olist_orders_dataset.csv')
 
 #Hago uun merge outer, pero en este caso los registros de ambos dataset coinciden exactamente:
 # no hay clientes que no tengan ningún pedido y cada cliente tiene un único pedido, por lo que no necesitamos transformar el df mergeado
