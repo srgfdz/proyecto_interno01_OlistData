@@ -95,17 +95,30 @@ clientes_por_estado = (
     .rename(columns={'customer_id': 'count_customers'})
 )
 
-# Gráfico
-fig, ax = plt.subplots(figsize=(8, 5))
-sns.barplot(
-    data=clientes_por_estado,
-    x='customer_state',
-    y='count_customers',
-    palette='Reds_r',
-    ax=ax
-)
-ax.set_title(f"{'Estados con menos' if orden_invertido else 'Estados con más clientes'}")
-ax.set_xlabel('Estado')
-ax.set_ylabel('Nº clientes')
 
-st.pyplot(fig)
+
+
+# Comprobar si hay datos para los filtros seleccionados
+if clientes_por_estado.empty:
+   st.markdown("""
+        <div style="padding: 20px; margin: 20px; border: 2px solid white; border-radius: 10px; background-color: #f8d7da; color: #721c24; text-align: center;">
+            <strong>*** No hay registros para los filtros aplicados, ajusta los filtros y prueba nuevamente ***</strong>
+        </div>
+    """, unsafe_allow_html=True)
+else:
+    # Convertir los nombres de los estados a mayúsculas
+    clientes_por_estado['customer_state'] = clientes_por_estado['customer_state'].str.upper()
+    # Gráfico
+    fig, ax = plt.subplots(figsize=(8, 5))
+    sns.barplot(
+        data=clientes_por_estado,
+        x='customer_state',
+        y='count_customers',
+        palette='Reds_r',
+        ax=ax
+    )
+    ax.set_title(f"{'Estados con menos' if orden_invertido else 'Estados con más clientes'}")
+    ax.set_xlabel('Estado')
+    ax.set_ylabel('Nº clientes')
+
+    st.pyplot(fig)
