@@ -1,6 +1,6 @@
-pandas
-matplotlib
-polars
-numpy
-seaborn
 streamlit
+pandas
+seaborn
+matplotlib
+numpy
+plotly
