@@ -290,7 +290,7 @@ df_resultado_num_pedidos_tarde = merge_tablas.sort_values(
     by="num_pedidos_tarde", ascending=False
 )
 df_top_15 = df_resultado_num_pedidos_tarde.head(15)
-"""
+
 # Gráfico num pedidos tarde por ciudad
 fig, ax = plt.subplots(figsize=(12, 6))
 
@@ -321,7 +321,7 @@ ax.set_xticklabels([])
 
 # Mostrar gráfico
 st.pyplot(fig)
-"""
+
 # Gráfico para ciudades con más pedidos tardios
 fig, ax = plt.subplots(figsize=(6, 4))
 sns.barplot(data=df_top_15, x="customer_city", y="num_pedidos_tarde", palette="Blues_r")
