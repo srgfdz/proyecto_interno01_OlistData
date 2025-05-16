@@ -292,35 +292,35 @@ df_resultado_num_pedidos_tarde = merge_tablas.sort_values(
 df_top_15 = df_resultado_num_pedidos_tarde.head(15)
 
 # Gráfico num pedidos tarde por ciudad
-fig, ax = plt.subplots(figsize=(12, 6))
+#fig, ax = plt.subplots(figsize=(12, 6))
 
-sns.boxplot(
-    data=df_resultado_num_pedidos_tarde,
-    x="customer_city",
-    y="num_pedidos_tarde",
-    palette="Blues",
-    width=0.6,
-)
+#sns.boxplot(
+    #data=df_top_15,
+    #x="customer_city",
+    #y="num_pedidos_tarde",
+    #palette="Blues",
+    #width=0.6,
+#)
 
 # Configurar representación puntos del boxplot
-sns.stripplot(
-    data=df_resultado_num_pedidos_tarde,
-    x="customer_city",
-    y="num_pedidos_tarde",
-    color="black",
-    size=6,
-    alpha=0.7,
-    jitter=True,
-)
+#sns.stripplot(
+    #data=df_top_15,
+    #x="customer_city",
+    #y="num_pedidos_tarde",
+    #color="black",
+    #size=6,
+    #alpha=0.7,
+    #jitter=True,
+#)
 
 # Etiquetas y título
-ax.set_xlabel("Ciudades")
-ax.set_ylabel("Número de pedidos tardíos")
-ax.set_title("Distribución de pedidos que llegan tarde por ciudad")
-ax.set_xticklabels([])
+#ax.set_xlabel("Ciudades")
+#ax.set_ylabel("Número de pedidos tardíos")
+#ax.set_title("Distribución de pedidos que llegan tarde por ciudad")
+#ax.set_xticklabels([])
 
 # Mostrar gráfico
-st.pyplot(fig)
+#st.pyplot(fig)
 
 # Gráfico para ciudades con más pedidos tardios
 fig, ax = plt.subplots(figsize=(6, 4))
