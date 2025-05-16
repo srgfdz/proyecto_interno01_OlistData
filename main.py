@@ -156,7 +156,7 @@ tabla = pedidos_por_ciudad.merge(clientes_por_ciudad, on=['Estado', 'Ciudad'])
 # Calcular ratio como número entero
 tabla['Ratio de Pedidos por Cliente'] = (
     tabla['Número de pedidos'] / tabla['Número de clientes']
-).round(0).astype(int)
+).round(2)
 
 # Select de estado
 estados_unicos = sorted(tabla['Estado'].unique())
@@ -205,3 +205,44 @@ with col2:
     ].reset_index(drop=True)
 
     st.dataframe(tabla_filtrada, use_container_width=True)
+
+
+
+# *** GRÁFICO EXTRA ***
+st.header("Pagos totales por persona")
+
+# Cargar datos para el punto 1 (clientes y pedidos)
+df_order_payments = pd.read_csv('./datasets_limpios/olist_order_payments_dataset_clean.csv')
+
+# Unir tablas usando order_id
+df_merged = pd.merge(df_order_payments, df_orders[['order_id', 'customer_id']], on='order_id', how='inner')
+
+# Agrupar pagos por cliente
+df_summary = df_merged.groupby('customer_id')['payment_value'].sum().reset_index()
+
+# Gráfico 
+# Ordenar por total pagado
+top_n = st.slider("Selecciona el número de clientes a mostrar", min_value=5, max_value=50, value=20)
+
+df_topN = df_summary.sort_values(by='payment_value', ascending=False).head(top_n)
+
+plt.figure(figsize=(12, 8))
+sns.set_style("whitegrid")
+
+ax = sns.scatterplot(
+    x='payment_value',
+    y='customer_id',
+    data=df_topN,
+    s=100,
+    color='royalblue'
+)
+
+ax.set_xlabel('Total Payment Value')
+ax.set_ylabel('Customer ID')
+ax.set_title(f'Top {top_n} clientes por total pagado')
+
+# Acortar etiquetas para mejor visualización
+new_labels = [c[:8] + "..." for c in df_topN['customer_id']]
+ax.set_yticklabels(new_labels)
+
+st.pyplot(plt)
