@@ -312,7 +312,7 @@ tabla = pedidos_por_ciudad.merge(clientes_por_ciudad, on=["Estado", "Ciudad"])
 # Calcular ratio como número entero
 tabla['Ratio de Pedidos por Cliente'] = (
     tabla['Número de pedidos'] / tabla['Número de clientes']
-).round(0).astype(int)
+).round(2)
  
 # Select de estado
 estados_unicos = sorted(tabla["Estado"].unique())
