@@ -2,6 +2,7 @@ import pandas as pd
 from pandas.api import types as pdt
 import operator
 
+#Funciones para limpiar y transformar df de pandas indicando por parámetros lo que queremos hacer...
 
 def clean_field_names_pandas(df: pd.DataFrame, case: str = "lower") -> pd.DataFrame:
     """
